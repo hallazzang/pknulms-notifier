@@ -55,11 +55,6 @@ func printError(format string, args ...interface{}) {
 	fmt.Fprintf(color.Output, "%v %s\n", color.RedString("ERROR:"), fmt.Sprintf(format, args...))
 }
 
-func printErrorAndExit(format string, args ...interface{}) {
-	printError(format, args...)
-	os.Exit(1)
-}
-
 func printInfo(format string, args ...interface{}) {
 	fmt.Fprintf(color.Output, "%v %s\n", color.CyanString("INFO:"), fmt.Sprintf(format, args...))
 }
@@ -72,13 +67,15 @@ func main() {
 
 	cfg, err := loadConfig(configPath)
 	if err != nil {
-		printErrorAndExit("Cannot load config file\n  [!] %v", err)
+		printError("Cannot load config file\n  [!] %v", err)
+		os.Exit(1)
 	}
 
 	client := pknulms.MustNewClient()
 
 	if !client.MustLogin(cfg.id, cfg.pw) {
-		printErrorAndExit("Login failed. Check ID and password")
+		printError("Login failed. Check ID and password")
+		os.Exit(0)
 	} else {
 		printInfo("Successfully logged in")
 	}
