@@ -39,3 +39,7 @@ Otherwise, you would do like:
 ```bash
 $ $GOPATH/bin/pknulms-notifier -config=/path/to/config.ini
 ```
+
+## Requirements
+
+pknulms-notifier is written in Golang 1.9.2. Go version under 1.7 might not work.
