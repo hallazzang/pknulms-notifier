@@ -18,7 +18,7 @@ for os, arch, ext, compression in platform_targets:
 
     print('building...', end=''); sys.stdout.flush()
     subprocess.run(f'GOOS={os} GOARCH={arch} go build -o build/{output_name}',
-        shell=True, stdout=subprocess.DEVNULL)
+        shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print('finished')
 
     print('deleting old files...', end=''); sys.stdout.flush()
@@ -29,8 +29,8 @@ for os, arch, ext, compression in platform_targets:
     print('archiving and compressing...', end=''); sys.stdout.flush()
     if compression == 'tar.gz':
         subprocess.run(f'tar -C build -zvcf build/{compress_name} {output_name}',
-            shell=True, stdout=subprocess.DEVNULL)
+            shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     elif compression == 'zip':
         subprocess.run(f'zip -j build/{compress_name} build/{output_name}',
-            shell=True, stdout=subprocess.DEVNULL)
+            shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print('finished\n')
