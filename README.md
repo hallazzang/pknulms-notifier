@@ -4,11 +4,14 @@ Pukyong National University LMS notifier for Slack
 
 ## Installation
 
+If you want an executable binary, see [Releases](https://github.com/hallazzang/pknulms-notifier/releases).
+
+Or build from latest source code and install into `$GOPATH/bin`:
 ```bash
-$ go get github.com/hallazzang/pknulms-notifier
+$ go get -u github.com/hallazzang/pknulms-notifier
 ```
 
-This command will place `pknulms-notifier` executable into `$GOPATH/bin`.
+This will put `pknulms-notifier` into your `$GOPATH/bin`.
 
 ## Configuration
 
