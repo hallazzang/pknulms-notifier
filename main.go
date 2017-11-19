@@ -52,11 +52,13 @@ func loadConfig(path string) (*config, error) {
 }
 
 func printError(format string, args ...interface{}) {
-	fmt.Fprintf(color.Output, "%v %s\n", color.RedString("ERROR:"), fmt.Sprintf(format, args...))
+	fmt.Fprintf(color.Output, "[%s] %v %s\n",
+		time.Now().Format("01/02 15:04"), color.RedString("ERROR:"), fmt.Sprintf(format, args...))
 }
 
 func printInfo(format string, args ...interface{}) {
-	fmt.Fprintf(color.Output, "%v %s\n", color.CyanString("INFO:"), fmt.Sprintf(format, args...))
+	fmt.Fprintf(color.Output, "[%s] %v %s\n",
+		time.Now().Format("01/02 15:04"), color.CyanString("INFO:"), fmt.Sprintf(format, args...))
 }
 
 func main() {
