@@ -2,6 +2,8 @@
 
 Pukyong National University LMS notifier for Slack
 
+![Screenshot](screenshot.png)
+
 ## Installation
 
 If you want an executable binary, see [Releases](https://github.com/hallazzang/pknulms-notifier/releases).
