@@ -2,7 +2,19 @@
 
 Pukyong National University LMS notifier for Slack
 
+## Screenshots
+
+Logging in:
+
 ![Screenshot](screenshot.png)
+
+You can check your job log:
+
+![Screenshot2](screenshot2.png)
+
+It posts message to slack channel:
+
+![Slack Screenshot](slack.png)
 
 ## Installation
 
