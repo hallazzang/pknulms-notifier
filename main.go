@@ -89,7 +89,6 @@ func main() {
 	for {
 		nts, err := client.GetNotificationsByPage(1)
 		if err != nil {
-			printError("An error occurred while fetching notifications\n  [!] %v", err)
 			goto sleepAndContinue
 		}
 
